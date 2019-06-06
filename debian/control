@@ -1,0 +1,12 @@
+Source: ros-dashing-ros1-rosbag-storage-vendor
+Section: misc
+Priority: extra
+Maintainer: Karsten Knese <karsten@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), git, libboost-all-dev, libbz2-dev, libconsole-bridge-dev, libgpgme-dev, libssl-dev, pkg-config, ros-dashing-ament-cmake, ros-dashing-ament-lint-auto, ros-dashing-ament-lint-common, ros-dashing-pluginlib, ros-dashing-ros1-bridge, ros-dashing-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-dashing-ros1-rosbag-storage-vendor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-dashing-ros-workspace
+Description: Vendor package for rosbag_storage of ROS1
