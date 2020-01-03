@@ -1,3 +1,28 @@
+## rosbag2_bag_v2 (eloquent) - 0.0.7-3
+
+The packages in the `rosbag2_bag_v2` repository were released into the `eloquent` distro by running `/Users/karsten/.pyenv/versions/3.7.4/bin/bloom-release -r eloquent -t eloquent --no-pull-request rosbag2_bag_v2` on `Fri, 03 Jan 2020 18:54:40 -0000`
+
+These packages were released:
+- `ros1_rosbag_storage_vendor`
+- `rosbag2_bag_v2_plugins`
+
+Version of package(s) in repository `rosbag2_bag_v2`:
+
+- upstream repository: https://github.com/ros2/rosbag2_bag_v2.git
+- release repository: https://github.com/ros2-gbp/rosbag2_bag_v2-release.git
+- rosdistro version: `0.0.7-1`
+- old version: `0.0.7-2`
+- new version: `0.0.7-3`
+
+Versions of tools used:
+
+- bloom version: `0.9.0`
+- catkin_pkg version: `0.4.14`
+- rosdep version: `0.17.1`
+- rosdistro version: `0.7.5`
+- vcstools version: `0.1.42`
+
+
 ## rosbag2_bag_v2 (eloquent) - 0.0.7-2
 
 The packages in the `rosbag2_bag_v2` repository were released into the `eloquent` distro by running `/Users/karsten/.pyenv/versions/3.7.4/bin/bloom-release -r eloquent -t eloquent rosbag2_bag_v2` on `Fri, 03 Jan 2020 18:39:43 -0000`
