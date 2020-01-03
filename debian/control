@@ -1,0 +1,12 @@
+Source: ros-eloquent-rosbag2-bag-v2-plugins
+Section: misc
+Priority: optional
+Maintainer: Karsten Knese <karsten@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-eloquent-ament-cmake, ros-eloquent-ament-cmake-gmock, ros-eloquent-ament-lint-auto, ros-eloquent-ament-lint-common, ros-eloquent-pluginlib, ros-eloquent-rclcpp, ros-eloquent-rcutils, ros-eloquent-ros1-bridge, ros-eloquent-ros1-rosbag-storage-vendor, ros-eloquent-rosbag2, ros-eloquent-rosbag2-storage, ros-eloquent-rosbag2-test-common, ros-eloquent-std-msgs, ros-eloquent-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-eloquent-rosbag2-bag-v2-plugins
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-eloquent-pluginlib, ros-eloquent-rclcpp, ros-eloquent-rcutils, ros-eloquent-ros1-bridge, ros-eloquent-ros1-rosbag-storage-vendor, ros-eloquent-rosbag2, ros-eloquent-rosbag2-storage, ros-eloquent-ros-workspace
+Description: Package containing storage and converter plugins for rosbag 1
