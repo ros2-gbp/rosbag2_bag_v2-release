@@ -1,3 +1,28 @@
+## rosbag2_bag_v2 (foxy) - 0.0.9-1
+
+The packages in the `rosbag2_bag_v2` repository were released into the `foxy` distro by running `/Users/karsten/.pyenv/versions/3.7.4/bin/bloom-release -r foxy rosbag2_bag_v2` on `Wed, 03 Jun 2020 23:39:36 -0000`
+
+These packages were released:
+- `ros1_rosbag_storage_vendor`
+- `rosbag2_bag_v2_plugins`
+
+Version of package(s) in repository `rosbag2_bag_v2`:
+
+- upstream repository: https://github.com/ros2/rosbag2_bag_v2.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `0.0.9-1`
+
+Versions of tools used:
+
+- bloom version: `0.9.3`
+- catkin_pkg version: `0.4.16`
+- rosdep version: `0.17.1`
+- rosdistro version: `0.8.2`
+- vcstools version: `0.1.42`
+
+
 ## rosbag2_bag_v2 (eloquent) - 0.0.7-4
 
 The packages in the `rosbag2_bag_v2` repository were released into the `eloquent` distro by running `/Users/karsten/.pyenv/versions/3.7.4/bin/bloom-release -t eloquent -r eloquent rosbag2_bag_v2` on `Tue, 07 Jan 2020 19:43:16 -0000`
