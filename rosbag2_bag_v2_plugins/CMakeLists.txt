@@ -20,22 +20,19 @@ find_package(ament_cmake REQUIRED)
 # include bridge first to not create package if ros1 packages cannot be found
 find_package(ros1_bridge QUIET)
 if(NOT ros1_bridge_FOUND)
-  message(WARNING "Failed to find ros1_bridge, skipping...")
-  # call ament_package() to avoid ament_tools treating this as a plain CMake pkg
-  ament_package()
-  return()
+  message(FATAL_ERROR "Failed to find ros1_bridge, cannot build.")
 endif()
+
 find_ros1_package(roscpp)
 if(NOT ros1_roscpp_FOUND)
-  message(WARNING "Failed to find ROS 1 roscpp, skipping...")
-  ament_package()
-  return()
+  message(FATAL_ERROR "Failed to find ROS 1 roscpp, cannot build.")
 endif()
 
 find_package(pluginlib REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rcpputils REQUIRED)
 find_package(rcutils REQUIRED)
-find_package(rosbag2 REQUIRED)
+find_package(rosbag2_cpp REQUIRED)
 find_package(rosbag2_storage REQUIRED)
 find_package(ros1_rosbag_storage REQUIRED)  # provided by ros1_rosbag_storage_vendor
 
@@ -83,8 +80,8 @@ add_library(
 ament_target_dependencies(${PROJECT_NAME}
   ros1_rosbag_storage
   rclcpp
+  rosbag2_cpp
   rosbag2_storage
-  rosbag2
   ros1_bridge
   pluginlib
   ros1_cpp_common
@@ -113,7 +110,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
   ROSBAG2_BAG_V2_PLUGINS_BUILDING_DLL)
 
 pluginlib_export_plugin_description_file(rosbag2_storage storage_plugin_description.xml)
-pluginlib_export_plugin_description_file(rosbag2 converter_plugin_description.xml)
+pluginlib_export_plugin_description_file(rosbag2_cpp converter_plugin_description.xml)
 
 install(
   TARGETS ${PROJECT_NAME}
@@ -129,6 +126,7 @@ if(BUILD_TESTING)
   find_package(ament_cmake_gmock REQUIRED)
   find_package(ament_lint_auto REQUIRED)
   find_package(rosbag2_test_common REQUIRED)
+  find_package(rosbag2_transport REQUIRED)
 
   ament_lint_auto_find_test_dependencies()
 
@@ -166,6 +164,7 @@ if(BUILD_TESTING)
       rosbag2_storage
       rclcpp
       rosbag2_test_common
+      rosbag2_transport
       std_msgs)
   endif()
 

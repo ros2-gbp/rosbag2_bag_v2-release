@@ -19,10 +19,14 @@
 #include <vector>
 #include <utility>
 
+#include "rcpputils/filesystem_helper.hpp"
+#include "rcutils/filesystem.h"
 #include "rosbag/message_instance.h"
 
-#include "rosbag2_storage/filesystem_helper.hpp"
+#include "rosbag2_storage/bag_metadata.hpp"
 #include "rosbag2_storage/ros_helper.hpp"
+#include "rosbag2_storage/serialized_bag_message.hpp"
+#include "rosbag2_storage/topic_metadata.hpp"
 #include "rosbag_output_stream.hpp"
 #include "../logging.hpp"
 #include "../convert_rosbag_message.hpp"
@@ -62,9 +66,10 @@ void RosbagV2Storage::open(
         topics_valid_in_ros2.push_back(connection->topic);
       }
     } else {
-      ROSBAG2_BAG_V2_PLUGINS_LOG_INFO_STREAM("ROS 1 to ROS 2 type mapping is not available for "
+      ROSBAG2_BAG_V2_PLUGINS_LOG_INFO_STREAM(
+        "ROS 1 to ROS 2 type mapping is not available for "
         "topic '" << connection->topic << "' which is of type '" << connection->datatype <<
-        "'. Skipping messages of this topic when replaying.");
+          "'. Skipping messages of this topic when replaying.");
     }
   }
 
@@ -75,7 +80,21 @@ void RosbagV2Storage::open(
 
 bool RosbagV2Storage::has_next()
 {
-  return bag_iterator_ != bag_view_of_replayable_messages_->end();
+  if (storage_filter_.topics.empty()) {
+    return bag_iterator_ != bag_view_of_replayable_messages_->end();
+  }
+
+  while (bag_iterator_ != bag_view_of_replayable_messages_->end()) {
+    auto message_instance = *bag_iterator_;
+
+    for (const auto & filter_topic : storage_filter_.topics) {
+      if (!message_instance.getTopic().compare(filter_topic)) {
+        return true;
+      }
+    }
+    bag_iterator_++;
+  }
+  return false;
 }
 
 std::shared_ptr<rosbag2_storage::SerializedBagMessage> RosbagV2Storage::read_next()
@@ -116,12 +135,12 @@ std::string RosbagV2Storage::get_storage_identifier() const
 
 uint64_t RosbagV2Storage::get_bagfile_size() const
 {
-  return rosbag2_storage::FilesystemHelper::get_file_size(ros_v2_bag_->getFileName());
+  return rcutils_get_file_size(ros_v2_bag_->getFileName().c_str());
 }
 
 std::string RosbagV2Storage::get_relative_file_path() const
 {
-  return rosbag2_storage::FilesystemHelper::get_file_name(ros_v2_bag_->getFileName());
+  return rcpputils::fs::path(ros_v2_bag_->getFileName()).filename().string();
 }
 
 rosbag2_storage::BagMetadata RosbagV2Storage::get_metadata()
@@ -129,6 +148,7 @@ rosbag2_storage::BagMetadata RosbagV2Storage::get_metadata()
   auto bag_view = std::make_unique<rosbag::View>(*ros_v2_bag_);
   auto full_file_path = ros_v2_bag_->getFileName();
   rosbag2_storage::BagMetadata metadata;
+  metadata.version = 2;
   metadata.storage_identifier = get_storage_identifier();
   metadata.bag_size = get_bagfile_size();
   metadata.relative_file_paths = {get_relative_file_path()};
@@ -180,6 +200,17 @@ RosbagV2Storage::get_all_topics_and_types_including_ros1_topics()
   }
 
   return topics_with_type;
+}
+
+void RosbagV2Storage::set_filter(
+  const rosbag2_storage::StorageFilter & storage_filter)
+{
+  storage_filter_ = storage_filter;
+}
+
+void RosbagV2Storage::reset_filter()
+{
+  storage_filter_ = rosbag2_storage::StorageFilter{};
 }
 
 }  // namespace rosbag2_bag_v2_plugins
