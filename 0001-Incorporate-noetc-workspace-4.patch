@@ -1,4 +1,4 @@
-From 85653de8fa08a956785d04f4394cd7d6c759ab91 Mon Sep 17 00:00:00 2001
+From 5bb0e98f48709eaee05fa8eb7f797f51361fd6c9 Mon Sep 17 00:00:00 2001
 From: Karsten Knese <Karsten1987@users.noreply.github.com>
 Date: Wed, 3 Jun 2020 20:18:18 -0700
 Subject: [PATCH] Incorporate noetc workspace (#4)
@@ -60,5 +60,5 @@ index 9c9604d..b2e59e3 100755
 +	export CMAKE_PREFIX_PATH=${AMENT_PREFIX_PATH}:${CMAKE_PREFIX_PATH} && \
  	dh_auto_install
 -- 
-2.23.0
+2.27.0
 
