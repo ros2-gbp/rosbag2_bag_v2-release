@@ -1,0 +1,80 @@
+ros-rolling-ros1-rosbag-storage-vendor (0.0.10-2focal) focal; urgency=high
+
+
+
+ -- Karsten Knese <karsten@openrobotics.org>  Fri, 05 Jun 2020 04:00:00 -0000
+
+ros-rolling-ros1-rosbag-storage-vendor (0.0.9-2focal) focal; urgency=high
+
+
+
+ -- Karsten Knese <karsten@openrobotics.org>  Wed, 03 Jun 2020 04:00:00 -0000
+
+ros-rolling-ros1-rosbag-storage-vendor (0.0.8-2focal) focal; urgency=high
+
+  * Adapt storage interface for filtering topics. (#28 <https://github.com/ros2/rosbag2_bag_v2/issues/28>)
+  * Contributors: Mabel Zhang
+
+ -- Karsten Knese <karsten@openrobotics.org>  Fri, 08 May 2020 04:00:00 -0000
+
+ros-rolling-ros1-rosbag-storage-vendor (0.0.7-2focal) focal; urgency=high
+
+
+
+ -- Karsten Knese <karsten@openrobotics.org>  Mon, 18 Nov 2019 05:00:00 -0000
+
+ros-rolling-ros1-rosbag-storage-vendor (0.0.6-2focal) focal; urgency=high
+
+  * removed dependency to ros1_bridge package (#90 <https://github.com/ros2/rosbag2_bag_v2/issues/90>)
+    * removed dependency to ros1_bridge package:
+    * checking if package is available
+    * if not skipping (with warnings)
+    * now rosbag2_tests builds on systems without ros1
+    * check ros1 deps correctly on all packages
+    * add ros1_bridge to test package
+    * silently try to find the bridge
+  * Contributors: DensoADAS
+
+ -- Karsten Knese <karsten@openrobotics.org>  Thu, 06 Jun 2019 04:00:00 -0000
+
+ros-rolling-ros1-rosbag-storage-vendor (0.0.5-2focal) focal; urgency=high
+
+  * add ros1bridge dependency
+  * Contributors: Karsten Knese
+
+ -- Karsten Knese <karsten@openrobotics.org>  Thu, 27 Dec 2018 05:00:00 -0000
+
+ros-rolling-ros1-rosbag-storage-vendor (0.0.4-2focal) focal; urgency=high
+
+  * Fix patch command osx (#82 <https://github.com/bsinno/rosbag2/issues/82>)
+  * Improve queue usage (#75 <https://github.com/bsinno/rosbag2/issues/75>)
+  * add ros1 rosbag_storage dependencies to vendor package (#77 <https://github.com/bsinno/rosbag2/issues/77>)
+  * find openssl (#76 <https://github.com/bsinno/rosbag2/issues/76>)
+  * 0.0.3
+  * manually bump version number as catkin_prepare_release complains
+  * generate changelog
+  * Contributors: Andreas Holzner, Karsten Knese, Martin Idel
+
+ -- Karsten Knese <karsten@openrobotics.org>  Wed, 19 Dec 2018 05:00:00 -0000
+
+ros-rolling-ros1-rosbag-storage-vendor (0.0.3-2focal) focal; urgency=high
+
+  * Release fixes (#73 <https://github.com/ros2/rosbag2/issues/73>)
+  * Play old bagfiles (#69 <https://github.com/ros2/rosbag2/issues/69>)
+  * Contributors: Karsten Knese, Martin Idel
+
+ -- Karsten Knese <karsten@openrobotics.org>  Fri, 14 Dec 2018 05:00:00 -0000
+
+ros-rolling-ros1-rosbag-storage-vendor (0.0.2-2focal) focal; urgency=high
+
+
+
+ -- Karsten Knese <karsten@openrobotics.org>  Wed, 12 Dec 2018 05:00:00 -0000
+
+ros-rolling-ros1-rosbag-storage-vendor (0.0.1-2focal) focal; urgency=high
+
+
+
+ -- Karsten Knese <karsten@openrobotics.org>  Tue, 11 Dec 2018 05:00:00 -0000
+
+
