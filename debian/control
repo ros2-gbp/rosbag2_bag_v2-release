@@ -1,0 +1,12 @@
+Source: ros-rolling-rosbag2-bag-v2-plugins
+Section: misc
+Priority: optional
+Maintainer: Karsten Knese <karsten@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-rolling-ament-cmake, ros-rolling-ament-cmake-gmock, ros-rolling-ament-lint-auto, ros-rolling-ament-lint-common, ros-rolling-pluginlib, ros-rolling-rclcpp, ros-rolling-rcutils, ros-rolling-ros1-bridge, ros-rolling-ros1-rosbag-storage-vendor, ros-rolling-rosbag2, ros-rolling-rosbag2-storage, ros-rolling-rosbag2-test-common, ros-rolling-rosbag2-transport, ros-rolling-shared-queues-vendor, ros-rolling-std-msgs, ros-rolling-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-rolling-rosbag2-bag-v2-plugins
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-rolling-pluginlib, ros-rolling-rclcpp, ros-rolling-rcutils, ros-rolling-ros1-bridge, ros-rolling-ros1-rosbag-storage-vendor, ros-rolling-rosbag2, ros-rolling-rosbag2-storage, ros-rolling-ros-workspace
+Description: Package containing storage and converter plugins for rosbag 1
