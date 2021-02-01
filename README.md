@@ -1,3 +1,28 @@
+## rosbag2_bag_v2 (rolling) - 0.1.0-1
+
+The packages in the `rosbag2_bag_v2` repository were released into the `rolling` distro by running `/usr/bin/bloom-release --rosdistro rolling --track rolling rosbag2_bag_v2 --edit` on `Mon, 01 Feb 2021 20:44:51 -0000`
+
+These packages were released:
+- `ros1_rosbag_storage_vendor`
+- `rosbag2_bag_v2_plugins`
+
+Version of package(s) in repository `rosbag2_bag_v2`:
+
+- upstream repository: https://github.com/ros2/rosbag2_bag_v2.git
+- release repository: https://github.com/ros2-gbp/rosbag2_bag_v2-release.git
+- rosdistro version: `0.0.10-2`
+- old version: `0.0.10-3`
+- new version: `0.1.0-1`
+
+Versions of tools used:
+
+- bloom version: `0.10.0`
+- catkin_pkg version: `0.4.23`
+- rosdep version: `0.20.0`
+- rosdistro version: `0.8.3`
+- vcstools version: `0.1.42`
+
+
 ## rosbag2_bag_v2 (rolling) - 0.0.10-3
 
 The packages in the `rosbag2_bag_v2` repository were released into the `rolling` distro by running `/usr/bin/bloom-release rosbag2_bag_v2 --rosdistro rolling` on `Mon, 01 Feb 2021 20:31:38 -0000`
