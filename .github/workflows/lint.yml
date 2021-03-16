@@ -1,0 +1,28 @@
+# Run linters automatically on pull requests.
+name: Lint rosbag2_bag_v2
+on:
+  pull_request:
+
+jobs:
+  ament_lint:
+    name: ament_lint
+    runs-on: ubuntu-latest
+    container: rostooling/setup-ros-docker:ubuntu-focal-ros-rolling-ros-base-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        linter:
+          - copyright
+          - xmllint
+          - cppcheck
+          - cpplint
+          - uncrustify
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ros-tooling/action-ros-lint@v0.1
+      with:
+        linter: ${{ matrix.linter }}
+        distribution: rolling
+        package-name: |
+            ros1_rosbag_storage_vendor
+            rosbag2_bag_v2_plugins
