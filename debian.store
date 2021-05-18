@@ -1,1 +1,1 @@
-{"base": "bee06b3", "parent": "debian/galactic/ros1_rosbag_storage_vendor", "previous": "ca0c1e6", "trim": "", "trimbase": ""}
+{"trim": "", "base": "3a96b8d", "trimbase": "", "parent": "debian/galactic/ros1_rosbag_storage_vendor", "previous": "8331f34"}
