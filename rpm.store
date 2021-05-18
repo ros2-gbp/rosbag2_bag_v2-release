@@ -1,1 +1,1 @@
-{"base": "020bb4c", "parent": "rpm/galactic/ros1_rosbag_storage_vendor", "previous": "22cdd33", "trim": "", "trimbase": ""}
+{"trim": "", "base": "f21d273", "trimbase": "", "parent": "rpm/galactic/ros1_rosbag_storage_vendor", "previous": "57448a8"}
